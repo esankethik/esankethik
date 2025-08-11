@@ -1,0 +1,24 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+}
+.hero {
+    background: linear-gradient(90deg, #007bff 60%, #6610f2 100%);
+}
+.hero .btn {
+    font-weight: 600;
+}
+.about img {
+    max-width: 350px;
+}
+.services .card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.services .card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+footer {
+    letter-spacing: 0.5px;
+}
