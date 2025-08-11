@@ -1,6 +1,68 @@
 // Enhanced JavaScript for eSankethik Technologies Landing Page
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Theme Toggle Functionality
+    class ThemeManager {
+        constructor() {
+            this.toggle = document.getElementById('themeToggle');
+            this.init();
+        }
+
+        init() {
+            // Check for saved theme preference or default to 'light'
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            this.setTheme(savedTheme);
+
+            // Add event listener for theme toggle
+            this.toggle.addEventListener('change', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                this.setTheme(newTheme);
+            });
+        }
+
+        setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Update toggle state
+            this.toggle.checked = theme === 'dark';
+            
+            // Update theme icons
+            const lightIcon = document.querySelector('.theme-icon-light');
+            const darkIcon = document.querySelector('.theme-icon-dark');
+            
+            if (theme === 'dark') {
+                lightIcon.classList.add('d-none');
+                darkIcon.classList.remove('d-none');
+            } else {
+                lightIcon.classList.remove('d-none');
+                darkIcon.classList.add('d-none');
+            }
+
+            // Trigger animation for smooth transition
+            document.body.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                document.body.style.transition = '';
+            }, 300);
+
+            console.log(`🎨 Theme switched to: ${theme}`);
+        }
+    }
+
+    // Initialize theme manager
+    new ThemeManager();
+    
+    // Add theme preference detection
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // User prefers dark mode, but only set if no saved preference
+        if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            const toggle = document.getElementById('themeToggle');
+            if (toggle) toggle.checked = true;
+        }
+    }
+    
     // Scroll Progress Indicator
     const scrollIndicator = document.createElement('div');
     scrollIndicator.className = 'scroll-indicator';
@@ -310,5 +372,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    console.log('🚀 Esankethik Technologies - Landing page loaded with animations!');
+    console.log('🚀 Esankethik Technologies - Landing page loaded with animations and theme toggle!');
 });
+
+// Listen for system theme changes
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            const themeManager = new ThemeManager();
+            themeManager.setTheme(newTheme);
+        }
+    });
+}
