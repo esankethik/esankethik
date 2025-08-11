@@ -2,6 +2,88 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f8f9fa;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero {
@@ -9,6 +91,24 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle fill="url(%23a)" cx="10" cy="10" r="10"/><circle fill="url(%23a)" cx="80" cy="10" r="10"/></svg>') repeat;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero .btn {
@@ -16,6 +116,23 @@ body {
     padding: 12px 30px;
     border-radius: 50px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hero .btn:hover::before {
+    left: 100%;
 }
 
 .hero .btn:hover {
@@ -25,30 +142,86 @@ body {
 
 .navbar {
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+    background: rgba(255,255,255,0.95) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
 }
 
 .nav-link {
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
 }
 
 .nav-link:hover {
     color: #007bff !important;
+    transform: translateY(-2px);
 }
 
 .service-card, .portfolio-card, .blog-card {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before, .portfolio-card::before, .blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,123,255,0.1), rgba(102,16,242,0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before, .portfolio-card:hover::before, .blog-card:hover::before {
+    opacity: 1;
 }
 
 .service-card:hover, .portfolio-card:hover, .blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-card .rounded-circle {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .rounded-circle {
+    animation: pulse 2s infinite;
 }
 
 .bg-gradient {
@@ -68,12 +241,37 @@ body {
 .badge {
     font-size: 0.75rem;
     padding: 0.5em 0.75em;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
 }
 
 .btn {
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn:hover {
@@ -93,6 +291,58 @@ footer {
     background: linear-gradient(135deg, #212529 0%, #495057 100%);
 }
 
+.social-links a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.2);
+    text-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #6610f2);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Parallax Effect */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.loading:nth-child(1) { animation-delay: 0.1s; }
+.loading:nth-child(2) { animation-delay: 0.2s; }
+.loading:nth-child(3) { animation-delay: 0.3s; }
+.loading:nth-child(4) { animation-delay: 0.4s; }
+.loading:nth-child(5) { animation-delay: 0.5s; }
+.loading:nth-child(6) { animation-delay: 0.6s; }
+
+/* Typed Text Animation */
+.typed-text {
+    border-right: 2px solid rgba(255,255,255,0.75);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: rgba(255,255,255,0.75); }
+    51%, 100% { border-color: transparent; }
+}
+
 @media (max-width: 768px) {
     .hero {
         min-height: 80vh;
@@ -104,5 +354,9 @@ footer {
     
     .lead {
         font-size: 1.1rem;
+    }
+    
+    .service-card:hover, .portfolio-card:hover, .blog-card:hover {
+        transform: translateY(-5px) scale(1.01);
     }
 }
