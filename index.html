@@ -6,96 +6,383 @@
     <title>eSankethik Technologies</title>
     <meta name="description" content="Transforming Ideas into Impact | AI-Driven Solutions | Digital Marketing | Graphic Design | Web Development">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero bg-primary text-white text-center py-5">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <h1 class="display-4 fw-bold">Transforming Ideas into Impact</h1>
-            <p class="lead">AI-Driven Solutions | Digital Marketing | Graphic Design | Web Development</p>
-            <a href="#contact" class="btn btn-light btn-lg mt-3">Let’s Connect & Innovate</a>
+            <a class="navbar-brand fw-bold text-primary" href="#home">eSankethik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <!-- Home Section -->
+            <section id="home" class="hero bg-primary text-white text-center py-5">
+                <div class="container">
+                    <h1 class="display-3 fw-bold mb-3">Empowering Your Digital Future</h1>
+                    <p class="lead mb-4">Esankethik Technologies LLP blends creativity, intelligence, and technology to launch your business into tomorrow. We deliver next-gen solutions that spark innovation, accelerate growth, and build lasting impact.</p>
+                    <a href="#contact" class="btn btn-light btn-lg mb-4 shadow">Start Your Journey</a>
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-lg-10">
+                            <div class="bg-white text-primary rounded shadow-sm p-4 mb-4">
+                                <h3 class="fw-bold mb-3">Why Esankethik?</h3>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="h-100">
+                                            <h5 class="fw-bold">Innovation at Core</h5>
+                                            <p>We harness AI, cloud, and modern design to deliver solutions that are not just relevant, but revolutionary.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="h-100">
+                                            <h5 class="fw-bold">Full-Spectrum Services</h5>
+                                            <p>From Generative AI to e-commerce, mobile apps to digital marketing, we cover every digital need under one roof.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="h-100">
+                                            <h5 class="fw-bold">Your Vision, Our Mission</h5>
+                                            <p>We partner with you, tailoring every solution to your goals and delivering measurable results, every time.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-10">
+                            <div class="bg-light text-dark rounded shadow-sm p-4">
+                                <h3 class="fw-bold mb-3 text-primary">What We Do Best</h3>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Generative AI Solutions</h5>
+                                        <p>AI-powered apps and content tools that transform user experience and business operations.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Mobile App Development</h5>
+                                        <p>High-performance, scalable apps built on Firebase, AWS Amplify, and PowerApps.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Design & Branding</h5>
+                                        <p>Memorable logos, intuitive UIs, and marketing assets that make your brand shine.</p>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mt-2">
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Web Development & Design</h5>
+                                        <p>AI-generated sites, custom e-commerce, and robust hosting for a powerful online presence.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Digital Marketing & SEO</h5>
+                                        <p>Targeted campaigns and SEO strategies that grow your audience and boost engagement.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="fw-bold">Data & AI Services</h5>
+                                        <p>Advanced analytics and AI integration to turn your data into actionable business insights.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-3 display-5 fw-bold">Services That Drive Results</h2>
+            <p class="text-center lead mb-5">From concept to deployment, we deliver comprehensive solutions that transform your digital landscape and accelerate business growth.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-brain" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Data & AI Services</h5>
+                            <p class="card-text">Transform raw data into strategic advantages with Microsoft Cloud AI analytics, machine learning models, and intelligent automation that drive informed decisions.</p>
+                            <a href="#contact" class="btn btn-outline-primary btn-sm">Explore AI Solutions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-success text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-chart-line" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Digital Marketing & SEO</h5>
+                            <p class="card-text">Amplify your online presence with strategic Google Ads, Meta campaigns, LinkedIn marketing, and SEO optimization that converts visitors into customers.</p>
+                            <a href="#contact" class="btn btn-outline-success btn-sm">Boost Your Reach</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-warning text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-palette" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Design & Branding</h5>
+                            <p class="card-text">Create unforgettable brand experiences with bespoke logos, intuitive user interfaces, and compelling marketing materials that resonate deeply with your audience.</p>
+                            <a href="#contact" class="btn btn-outline-warning btn-sm">Design Your Brand</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-1">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-info text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-robot" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Generative AI Solutions</h5>
+                            <p class="card-text">Revolutionize operations with cutting-edge AI applications, automated content creation, and intelligent tools that enhance productivity and user engagement.</p>
+                            <a href="#contact" class="btn btn-outline-info btn-sm">Unleash AI Power</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-danger text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-mobile-alt" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Mobile App Development</h5>
+                            <p class="card-text">Build high-performance, scalable mobile applications using Firebase, AWS Amplify, and Microsoft PowerApps with enterprise-grade security and seamless UX.</p>
+                            <a href="#contact" class="btn btn-outline-danger btn-sm">Build Your App</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <div class="bg-secondary text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <i class="fas fa-code" style="font-size: 24px;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold">Web Development & Design</h5>
+                            <p class="card-text">Establish a powerful digital presence with AI-generated websites, custom e-commerce platforms, and reliable cloud hosting that drives engagement and growth.</p>
+                            <a href="#contact" class="btn btn-outline-secondary btn-sm">Launch Your Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- About Section -->
-    <section class="about py-5">
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio py-5 bg-white">
         <div class="container">
+            <h2 class="text-center mb-3 display-5 fw-bold">Success Stories</h2>
+            <p class="text-center lead mb-5">Real projects, real impact. See how we've transformed businesses across industries with innovative technology solutions.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm portfolio-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" class="card-img-top" alt="AI Chatbot Platform" style="height: 250px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 bg-primary text-white px-3 py-1 m-3 rounded">
+                                <small class="fw-bold">AI Solution</small>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">Smart Customer Support Platform</h5>
+                            <p class="card-text">AI-powered conversational platform that reduced customer service response time by 75% and increased satisfaction scores by 40%.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-primary">AI & Machine Learning</span>
+                                <a href="#contact" class="btn btn-outline-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm portfolio-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" class="card-img-top" alt="E-Commerce Platform" style="height: 250px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 bg-success text-white px-3 py-1 m-3 rounded">
+                                <small class="fw-bold">E-Commerce</small>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">Next-Gen E-Commerce Platform</h5>
+                            <p class="card-text">Modern, scalable online store with integrated analytics, AI recommendations, and seamless payment processing that boosted sales by 150%.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-success">Web Development</span>
+                                <a href="#contact" class="btn btn-outline-success btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm portfolio-card">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop" class="card-img-top" alt="Brand Identity" style="height: 250px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 bg-warning text-white px-3 py-1 m-3 rounded">
+                                <small class="fw-bold">Branding</small>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">Complete Brand Transformation</h5>
+                            <p class="card-text">Comprehensive rebranding including logo design, UI/UX overhaul, and marketing materials that increased brand recognition by 200%.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-warning">Design & Branding</span>
+                                <a href="#contact" class="btn btn-outline-warning btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary btn-lg">See More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-3 display-5 fw-bold">About Esankethik</h2>
+            <p class="text-center lead mb-5">Innovation Born in Kerala, Impact Delivered Globally</p>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h2>About eSankethik Technologies</h2>
-                    <p>We blend creativity, data-driven insights, and cutting-edge technology to empower businesses. Our mission? To amplify brand visibility, engage audiences, and drive growth. From sleek web development to captivating visuals, we’re your digital partner.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/images/hero-graphic.png" alt="eSankethik Technologies" class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section -->
-    <section class="services bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">AI-Driven Solutions</h5>
-                            <p class="card-text">Harness the power of artificial intelligence to automate, analyze, and accelerate your business.</p>
+                    <div class="pe-md-4">
+                        <h3 class="fw-bold mb-3 text-primary">Our Journey</h3>
+                        <p class="mb-3">Founded in July 2024 in the tech hub of Kerala, Esankethik Technologies LLP emerged with a clear mission: to democratize cutting-edge technology for businesses of all sizes.</p>
+                        <p class="mb-3">We're not just another IT company. We're innovators, problem-solvers, and your strategic technology partners. Our multidisciplinary team combines deep technical expertise with creative thinking to deliver solutions that don't just meet current needs—they anticipate future challenges.</p>
+                        <p class="mb-4">With strategic partnerships with industry giants like ASUS and MSI, we bring enterprise-grade technology within reach of every business, from ambitious startups to established enterprises.</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <div class="text-center p-3 bg-white rounded shadow-sm">
+                                    <h4 class="fw-bold text-primary mb-1">50+</h4>
+                                    <small class="text-muted">Projects Delivered</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center p-3 bg-white rounded shadow-sm">
+                                    <h4 class="fw-bold text-success mb-1">95%</h4>
+                                    <small class="text-muted">Client Satisfaction</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">Digital Marketing</h5>
-                            <p class="card-text">Boost your brand’s online presence with data-driven marketing strategies and campaigns.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">Graphic Design</h5>
-                            <p class="card-text">Captivating visuals and creative assets that make your brand stand out.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Development</h5>
-                            <p class="card-text">Modern, responsive websites and web apps tailored to your business needs.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="contact py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Let’s Connect</h2>
-            <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                    <div class="ps-md-4">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop" alt="Esankethik Team" class="img-fluid rounded shadow mb-4">
+                        <div class="bg-primary text-white rounded shadow-sm p-4 mb-3">
+                            <h4 class="fw-bold mb-3">Our Vision</h4>
+                            <p class="mb-0">To be the leading technology catalyst that transforms businesses globally through innovative solutions, fostering sustainable growth and creating lasting digital impact across industries.</p>
                         </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        <div class="bg-success text-white rounded shadow-sm p-4">
+                            <h4 class="fw-bold mb-3">Our Mission</h4>
+                            <p class="mb-0">Empowering businesses with cutting-edge IT solutions that drive innovation, enhance digital capabilities, and accelerate growth while maintaining the highest standards of excellence and integrity.</p>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-dark text-white text-center py-3">
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Blog</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">5 Ways AI is Transforming Business</h5>
+                                <p class="card-text">Discover how artificial intelligence is revolutionizing industries and driving innovation.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Design Trends 2025</h5>
+                                <p class="card-text">Explore the latest in graphic and web design for the coming year.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Digital Marketing Essentials</h5>
+                                <p class="card-text">Tips and strategies to boost your brand’s online presence and engagement.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Let’s Connect</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <small>&copy; 2025 eSankethik Technologies. Open Source. Powered by AI & Creativity.</small>
+            <div class="row">
+                <div class="col-md-6 text-md-start">
+                    <h5 class="fw-bold mb-2">Esankethik Technologies LLP</h5>
+                    <p class="mb-0">Transforming Ideas into Digital Reality</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links mb-2">
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+                    </div>
+                    <small>&copy; 2025 Esankethik Technologies LLP. All rights reserved.</small>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

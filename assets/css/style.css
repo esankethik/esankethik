@@ -1,24 +1,108 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f8f9fa;
+    line-height: 1.6;
 }
+
 .hero {
-    background: linear-gradient(90deg, #007bff 60%, #6610f2 100%);
+    background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
+
 .hero .btn {
     font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
-.about img {
-    max-width: 350px;
+
+.hero .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-.services .card {
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+
+.navbar {
+    transition: all 0.3s ease;
 }
-.services .card:hover {
-    transform: translateY(-8px) scale(1.03);
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+.service-card, .portfolio-card, .blog-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.service-card:hover, .portfolio-card:hover, .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.display-5 {
+    font-weight: 700;
+    color: #212529;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5em 0.75em;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
+
+.rounded {
+    border-radius: 15px !important;
+}
+
 footer {
     letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #212529 0%, #495057 100%);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
 }
