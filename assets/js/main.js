@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     class ThemeManager {
         constructor() {
             this.toggle = document.getElementById('themeToggle');
+            this.icon = this.toggle.querySelector('.theme-icon');
             this.init();
         }
 
@@ -14,30 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setTheme(savedTheme);
 
             // Add event listener for theme toggle
-            this.toggle.addEventListener('change', () => {
+            this.toggle.addEventListener('click', () => {
                 const currentTheme = document.documentElement.getAttribute('data-theme');
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                this.setTheme(newTheme);
+                this.setTheme(newTheme, true);
             });
         }
 
-        setTheme(theme) {
+        setTheme(theme, animate = false) {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             
-            // Update toggle state
-            this.toggle.checked = theme === 'dark';
+            // Add switching animation
+            if (animate) {
+                this.toggle.classList.add('switching');
+                setTimeout(() => {
+                    this.toggle.classList.remove('switching');
+                }, 400);
+            }
             
-            // Update theme icons
-            const lightIcon = document.querySelector('.theme-icon-light');
-            const darkIcon = document.querySelector('.theme-icon-dark');
-            
+            // Update icon based on theme
             if (theme === 'dark') {
-                lightIcon.classList.add('d-none');
-                darkIcon.classList.remove('d-none');
+                this.icon.className = 'fas fa-sun theme-icon';
             } else {
-                lightIcon.classList.remove('d-none');
-                darkIcon.classList.add('d-none');
+                this.icon.className = 'fas fa-moon theme-icon';
             }
 
             // Trigger animation for smooth transition
@@ -59,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!localStorage.getItem('theme')) {
             document.documentElement.setAttribute('data-theme', 'dark');
             const toggle = document.getElementById('themeToggle');
-            if (toggle) toggle.checked = true;
+            const icon = toggle?.querySelector('.theme-icon');
+            if (icon) icon.className = 'fas fa-sun theme-icon';
         }
     }
     

@@ -116,39 +116,48 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
-/* Theme Toggle Styles */
-.theme-toggle {
-    width: 50px !important;
-    height: 25px !important;
-    cursor: pointer;
-    background-color: #6c757d !important;
-    border-color: #6c757d !important;
-}
-
-.theme-toggle:checked {
-    background-color: #4dabf7 !important;
-    border-color: #4dabf7 !important;
-}
-
-.form-check-label {
-    cursor: pointer;
-    margin-left: 10px;
-    position: relative;
-}
-
-.theme-icon-light,
-.theme-icon-dark {
-    font-size: 1rem;
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-secondary);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.theme-toggle-btn .theme-icon {
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
     color: var(--text-primary);
 }
 
-[data-theme="dark"] .theme-icon-light {
-    display: none !important;
+.theme-toggle-btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0,123,255,0.25);
 }
 
-[data-theme="dark"] .theme-icon-dark {
-    display: inline !important;
+/* Icon rotation animation */
+.theme-toggle-btn.switching .theme-icon {
+    transform: rotate(360deg) scale(0.8);
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+    border-color: #4dabf7;
+    background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+    box-shadow: 0 4px 15px rgba(77, 171, 247, 0.4);
 }
 
 /* Enhanced transitions for smooth theme switching */
